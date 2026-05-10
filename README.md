@@ -20,7 +20,9 @@ Migrate your Lovable Cloud project to your own Supabase directly from claude.ai 
 npx skills add CarolMonroe22/lovable-cloud-to-supabase-migration-chat
 ```
 
-Or manually: download the ZIP, open claude.ai, go to Settings, upload the skill.
+You can also copy the repo URL and paste it directly into claude.ai or any agent that supports skills.
+
+Or [download the .skill file](https://ajvkznmwjdeariuzlwoa.supabase.co/storage/v1/object/public/skills/lovable-cloud-supabase-migration-chat.skill) and upload it manually in claude.ai (Settings > Capabilities > Skills).
 
 ## Need the full migration including frontend?
 
