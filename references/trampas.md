@@ -6,7 +6,7 @@ Severity legend: 🔴 critical (breaks the app), 🟠 silent bug (data integrity
 
 ---
 
-## Trap 1 — 🔴 Tech stack default changed (Phase 8)
+## Trap 1 — 🔴 Tech stack default changed (Phase 9 fallback)
 
 **Discovered**: May 8, 2026. Lovable changed its default project template from Vite + React + React Router (`vite_react_shadcn_ts`) to TanStack Start (`tanstack_start_ts_2026-05-06`) on May 6, 2026.
 
@@ -65,7 +65,7 @@ except CapacityError:
 CREATE EXTENSION IF NOT EXISTS pg_net WITH SCHEMA extensions;
 ```
 
-Verify in Phase 9:
+Verify in Phase 8:
 ```sql
 SELECT EXISTS(SELECT 1 FROM pg_extension WHERE extname='pg_net') AS pg_net_enabled;
 ```
@@ -358,11 +358,11 @@ This MUST be done via the dashboard — there's no API for it.
 
 ---
 
-## Trap 12 — 🟠 Phase 9 verifies almost nothing (Phase 9)
+## Trap 12 — 🟠 The verify phase (now Phase 8) verifies almost nothing if left as-is
 
 **Discovered**: While reviewing the original skill's verify step.
 
-**Impact**: The original Phase 9 only counts `tables` matched. It misses:
+**Impact**: The original verify step only counts `tables` matched. It misses:
 - Functions count mismatch (Trap 8)
 - Triggers count mismatch (Trap 8)
 - Sequences count mismatch (Trap 9)
@@ -371,7 +371,7 @@ This MUST be done via the dashboard — there's no API for it.
 - auth.identities count (Trap 11)
 - Storage objects count
 
-**Fix**: Use the comprehensive audit query from `SKILL.md` Phase 9. Compare each row against the source values from Phase 1.
+**Fix**: Use the comprehensive audit query from `SKILL.md` Phase 8, BEFORE removing anything. Compare each row against the source values from Phase 1.
 
 The audit should output a comparison table:
 ```
@@ -497,4 +497,4 @@ WITH counts AS (
 SELECT * FROM counts ORDER BY category;
 ```
 
-Save these counts. Use them as the comparison baseline in Phase 9.
+Save these counts. Use them as the comparison baseline in Phase 8.
