@@ -4,6 +4,8 @@
 [![Tested](https://img.shields.io/badge/tested-2026--05--10-green)](https://github.com/CarolMonroe22/lovable-cloud-to-supabase-migration-chat)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 
+> **Update (July 2026):** Lovable Cloud now has official **Export**, **Pause** and **Remove** buttons, so the recommended flow changed. This chat skill still works, but check the [main migration skill v4](https://github.com/CarolMonroe22/lovable-cloud-to-supabase-migration) and the [current walkthrough](https://carolmonroe.com/blog/export-remove-lovable-cloud) first - the new same-project path is simpler and official.
+
 Migrate your Lovable Cloud project to your own Supabase directly from claude.ai chat. No CLI, no terminal, no GitHub setup. Connect the MCPs, describe what you want, and the skill handles schema, data, auth users (with passwords and identities), storage, and edge functions.
 
 | | |
